@@ -26,7 +26,7 @@ pushd $REPO_PATH
   git config user.name $GIT_NAME
   git config user.email $GIT_EMAIL
   git config credential.helper "store --file=.git/credentials"
-  echo "https://${GH_TOKEN}:@github.com" > ".git/credentials"
+  echo "https://iauns:${GH_TOKEN}@github.com" > ".git/credentials"
 
   git add .
   git commit -m "Travis auto publish site"
