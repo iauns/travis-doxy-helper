@@ -1,4 +1,5 @@
 travis-doxy-helper
 ==================
 
-Utility scripts to help with compiling doxygen docs on Travis CI
+Simple shell script to help compile and upload doxygen documentation for C++
+projects.
