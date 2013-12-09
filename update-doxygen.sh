@@ -21,16 +21,17 @@ doxygen ${DOX_PATH}
 mv ${REPO_PATH}/html/* ${REPO_PATH}
 rm -rf ${REPO_PATH}/html
 
-git config --global user.name $GIT_NAME
-git config --global user.email $GIT_EMAIL
-git config --global credential.helper "store --file=.git/credentials"
-echo "https://${GH_TOKEN}:@github.com" > ".git/credentials"
-
 # Use Travis CI environment variables to upload result to our github account.
 pushd $REPO_PATH
-git add .
-git commit -m "Travis auto publish site"
-git push origin gh-pages
+  git config user.name $GIT_NAME
+  git config user.email $GIT_EMAIL
+  git config credential.helper "store --file=.git/credentials"
+  echo "https://${GH_TOKEN}:@github.com" > ".git/credentials"
 
-rm .git/credentials
+  git add .
+  git commit -m "Travis auto publish site"
+  git push origin gh-pages
+
+  rm .git/credentials
+popd
 
