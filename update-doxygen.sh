@@ -4,6 +4,11 @@ DOX_PATH=$1
 REPO_PATH=$2
 REPO=$3
 
+# Only run doxygen if we are using gcc.
+if [ ! "$CXX" = "g++"  ]; then
+  exit 0
+fi
+
 if [ -d $REPO_PATH ]; then
   rm -rf $REPO_PATH
 fi
