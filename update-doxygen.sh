@@ -37,6 +37,10 @@ pushd $REPO_PATH
   git config credential.helper "store --file=.git/credentials"
   echo "https://iauns:${GH_TOKEN}@github.com" > ".git/credentials"
 
+  # Ensure we touch .nojekyll. Otherwise files that begin with '_' will be
+  # ignored by github's gh-pages.
+  touch .nojekyll
+
   git add .
   git commit -m "Travis auto publish site"
   git push origin gh-pages
