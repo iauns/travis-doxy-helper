@@ -5,8 +5,8 @@ REPO_PATH=$2
 REPO=$3
 
 # Only run doxygen if we are using gcc.
-if [[ "$CXX" == *"g++"* ]]; then
-  echo "GCC detected. Running doxygen."
+if [[ "$CXX" =~ "g++" ]]; then
+  echo "GCC detected. Running doxygen. CXX: $CXX"
 else
   echo "Clang detected. Not running doxygen."
   echo "CXX: $CXX"
