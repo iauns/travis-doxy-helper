@@ -9,6 +9,7 @@ if [ "$CXX" = "g++"  ]; then
   echo "GCC detected. Running doxygen."
 else
   echo "Clang detected. Not running doxygen."
+  echo "CXX: $CXX"
   exit 0
 fi
 
