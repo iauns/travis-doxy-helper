@@ -5,7 +5,9 @@ REPO_PATH=$2
 REPO=$3
 
 # Only run doxygen if we are using gcc.
-if [ ! "$CXX" = "g++"  ]; then
+if [ "$CXX" = "g++"  ]; then
+  echo "GCC detected. Running doxygen."
+else
   exit 0
 fi
 
